@@ -33,7 +33,7 @@ Commands can then use `$IP` as a reference, e.g., `ssh user@$IP`.
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 1: Nmap Scan Results**
 
@@ -81,13 +81,13 @@ This clue indicated that a custom **`User-Agent`** string should be used to acce
 
 ---
 
-<br><br>
+<br>
 
-## **Step 2: Run [`agent.py`](/scripts/python/agent.py) Script**
+## **Step 2: Run [`agent.py`](./scripts/python/agent.py) Script**
 
 After accessing the web page and reading the message, the phrase `From, Agent R` could indicate a pattern for codenames using uppercase letters of the alphabet.
 
-This clue suggested that the correct User-Agent should match an agent's codename in **uppercase** format (e.g., "R"). To automate the testing of different codenames, the [**`agent.py`**](/scripts/python/agent.py) script was created.
+This clue suggested that the correct User-Agent should match an agent's codename in **uppercase** format (e.g., "R"). To automate the testing of different codenames, the [**`agent.py`**](./scripts/python/agent.py) script was created.
 
 This script iterates through all uppercase letters from A to Z as potential codenames. For each attempt:
 
@@ -138,7 +138,7 @@ This method efficiently automates the process of identifying the correct `User-A
 ```
 ---
 
-<br><br>
+<br>
 
 ## **Step 3: Crack FTP Password with Hydra**
 
@@ -155,7 +155,7 @@ hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://agent.thm
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 4: Connect to FTP Server and Download Files**
 
@@ -214,7 +214,7 @@ ftp>
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 5: Analyze Binary File with Binwalk**
 
@@ -241,7 +241,7 @@ When using the `-e` flag, Binwalk automatically extracts the identified data and
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 6: Crack ZIP Password with John the Ripper**
 
@@ -275,7 +275,7 @@ Session completed.
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 7: Now you can return to zip file and get access using the cracked password**
 
@@ -385,7 +385,7 @@ Executing this command results in the decoded output, which is the original text
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 8: Extract Hidden Data with `steghide`**
 
@@ -408,7 +408,7 @@ steghide extract -sf cute-alien.jpg
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 9: SSH Access and Initial Investigation**
 
@@ -486,7 +486,7 @@ b03d975e8c92a7c04146cfa7a5a313c7
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 10: Secure Copy (SCP) to Retrieve Evidence**
 
@@ -515,7 +515,7 @@ The file `Alien_autospy.jpg` will now be available in your current working direc
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 11: Exploit Sudo Vulnerability (CVE-2019-14287)**
 
@@ -571,7 +571,7 @@ To gain further access to the system by exploiting a vulnerability in `sudo` (CV
       ```
 <br>
 
-## ***[`Exploit`](/scripts/shell/exploit.sh) Description***
+## ***[`Exploit`](./scripts/shell/exploit.sh) Description***
 
 The exploit targets a vulnerability in the `sudo` command known as **CVE-2019-14287**. This vulnerability occurs when specific configurations in `sudo` allow a user with limited privileges to execute commands as `root`, bypassing typical security restrictions.
 
@@ -598,11 +598,11 @@ This bypasses normal security checks by exploiting the vulnerability's flaw in h
 ### CVE Selection Explanation
 The CVE-2019-14287 vulnerability was identified after analyzing the `sudo` version on the target machine (`1.8.21p2`). This version is confirmed to be affected by the vulnerability, which impacts all `sudo` versions prior to `1.8.28`. This vulnerability was chosen as it aligns with the intended challenge in the TryHackMe CTF.
 
-For more details, refer to the [**`exploit.sh`**](/scripts/shell/exploit.sh) script in this repository and [**`CVE-2019-14287`**](https://github.com/n0w4n/CVE-2019-14287.git) repository.
+For more details, refer to the [**`exploit.sh`**](./scripts/shell/exploit.sh) script in this repository and [**`CVE-2019-14287`**](https://github.com/n0w4n/CVE-2019-14287.git) repository.
 
 ---
 
-<br><br>
+<br>
 
 ## **Step 12: Gaining Root Access**
 
